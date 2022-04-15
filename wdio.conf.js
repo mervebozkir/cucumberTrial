@@ -21,7 +21,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './features/**/*.feature'
+        //'./features/**/*.feature'
+        './features/navigateWebsite.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -209,8 +210,9 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      * @param {String} cid worker id (e.g. 0-0)
      */
-    // beforeSession: function (config, capabilities, specs, cid) {
-    // },
+     beforeSession: function(config, capabilities, specs) {
+        require("@babel/register");
+    },
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
@@ -276,8 +278,9 @@ exports.config = {
      * @param {number}                 result.duration  duration of scenario in milliseconds
      * @param {Object}                 context          Cucumber World object
      */
-    // afterScenario: function (world, result, context) {
-    // },
+     afterScenario: function (world, result, context) {
+        browser.reloadSession()        
+    },
     /**
      *
      * Runs after a Cucumber Feature.
