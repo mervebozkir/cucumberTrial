@@ -18,3 +18,7 @@ Then(/^The user see my account page$/, ()=>{
 Then(/^The user see title of the page is "(.*)"$/, (keyword)=>{
     homepage.checkTitle(keyword)
 })
+
+Then(/^The user see related results listed$/, ()=>{
+    homepage.relatedResults()
+})

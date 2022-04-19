@@ -13,3 +13,7 @@ When(/^The user clicks SignIn button$/, ()=>{
 When(/^The user clicks on the "(.*)" option in the menu$/, (keyword)=>{
     homePage.clickMenu(keyword)
 })
+
+When(/^The user inputs "(.*)" on search bar$/, (keyword)=>{
+    homePage.inputValueOnSearchBar(keyword)
+})

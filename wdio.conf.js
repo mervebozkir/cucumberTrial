@@ -22,7 +22,7 @@ exports.config = {
     //
     specs: [
         //'./features/**/*.feature'
-        './features/navigateWebsite.feature'
+        './features/trialTask.feature'
     ],
     // Patterns to exclude.
     exclude: [
